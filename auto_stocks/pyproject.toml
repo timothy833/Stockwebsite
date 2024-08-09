@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "auto-stocks"
+version = "0.1.0"
+description = ""
+authors = ["hungyenlee <durian821016@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.31.0"
+beautifulsoup4 = "^4.12.3"
+pandas = "^2.2.0"
+lxml = "^5.1.0"
+fastapi = "^0.110.0"
+uvicorn = "^0.28.0"
+ruff = "^0.3.4"
+mypy = "^1.9.0"
+datetime = "^5.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
