@@ -36,7 +36,7 @@
     
     <script setup lang="ts">
     import { useStore } from '../stores'
-    // import { onMounted } from 'vue'
+    import { onMounted } from 'vue'
     import { ref, computed } from 'vue'
     import { useRoute } from 'vue-router';
 
@@ -58,6 +58,10 @@
 
     //   }
     // )
+
+    onMounted(async () => {
+      await store.getList(); // 获取后端数据
+    });
 
     const stockName = computed(() => {
       if (route.query.search) {

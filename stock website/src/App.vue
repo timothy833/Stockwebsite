@@ -24,14 +24,13 @@ const store = useStore()
 const router = useRouter()
 
 
-const stockData1 = ref("");
+const stockData1 = ref<string>("");
 
 // const stockData = ref({});
 
 onMounted(
   async ()=>{
-    await store.getList()
-    // stockData.value = store.list.data
+    await store.getList(); // 调用store中的getList action来获取数据
   }
 )
 
@@ -44,7 +43,7 @@ const home = (url:string) => {
 const toPage = (stockindex : string , query : string) => {
   router.push({
     name: stockindex,
-    query: {search: query }
+    query: {search: query }  // 传递查询参数
   })
 }
 

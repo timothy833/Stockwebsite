@@ -4,10 +4,23 @@ const api = axios.create({
     baseURL: import.meta.env.VITE_API_BASE_URL,
   });
 
-export const getApiList = api
-    .get("/stock")
-    .then((res) => { return res.data })
-    .catch((error) => console.log(error));
+
+export const getApiList = async () => {
+  try {
+    const response = await api.get("/stock");  // 发起GET请求
+    return response.data;  // 返回数据
+  } catch (error) {
+    console.error("Error fetching API list:", error);
+    throw error;  // 抛出错误以便在调用处处理
+  }
+};
+
+
+
+// export const getApiList = api
+//     .get("/stock")
+//     .then((res) => { return res.data })
+//     .catch((error) => console.log(error));
 
 
 // export const getApiList  = axios
